@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="Name Displayer">
+    <lightning-button label="Hent" onclick={handleLoad}></lightning-button>
+    <template if:true={contacts}>
+      <template for:each={contacts} for:item=contact>
+        <p key={contact.Id}>{contact.Name}</p>
+      </template>
+    </template>
+    <template if:true={error}>
+      {error}
+    </template>
+  </lightning-card>
+</template>
