@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="Account Searcher">
+    <lightning-input type="search" value={accountName} onchange={handleKeyChange} label="Søk på Account.."></lightning-input>
+      <template if:true={showSearchedValues}>
+        <div>
+          <ul>
+            <template for:each={accountList} for:item="accountObject">
+              <li key={accountObject.Id} onclick={handleParentSelection} data-value={accountObject.Id} data-label={accountObject.Name}>
+                {accountObject.Name}
+              </li>
+            </template>
+          </ul>
+        </div>
+      </template>
+  </lightning-card>
+</template>
