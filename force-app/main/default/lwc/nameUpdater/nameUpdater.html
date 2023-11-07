@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Name Updater">
+    <lightning-button label="Hent" onclick={handleLoad}></lightning-button>
+    <template if:true={contacts}>
+      <template for:each={contacts} for:item=contact>
+        <p key={contact.Id}>{contact.FirstName} {contact.LastName}</p>
+        <lightning-button key={contact.Id} label="Oppdater" value={contact.Id} onclick={handleUpdate}></lightning-button>
+      </template>
+    </template>
+    <template if:true={error}>
+      {error}
+    </template>
+  </lightning-card>
+</template>
+
