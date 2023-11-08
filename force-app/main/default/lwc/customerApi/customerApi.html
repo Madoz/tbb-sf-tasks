@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="External API - Get customers">
+      <lightning-layout>
+          <div class="slds-p-around_small">
+              <lightning-button label="Callout" onclick={handleClick}></lightning-button>
+              <br>
+              <template if:true={dataReady}>
+                <template for:each={apidata} for:item=customer>
+                  <p key={customer.id}>{customer.id} - {customer.name}</p>
+                </template>
+              </template>
+          </div>
+      </lightning-layout>
+  </lightning-card>
+</template>
